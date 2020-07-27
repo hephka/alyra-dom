@@ -22,18 +22,24 @@ ou ... correspondent aux couleurs start et end d'un des objet de l'array gradien
 Le bouton #header-button permet de regénérer le header (=changer le dégradé)
 */
 
-function generateBgImg() {
-  const start = Math.floor(Math.random() * gradients.length);
-  const end = Math.floor(Math.random() * gradients.length);
-  const colorGradient = (document.getElementById(
-    "header"
-  ).style.backgroundImage = `linear-gradient(90deg, ${start}, ${end})`);
-  console.log(colorGradient);
-}
+const header = document.querySelector("#header");
+const randomIndexGradient = Math.floor(Math.random() * gradients.length);
 
-const myButton = document.querySelector("header-button");
-myButton.addEventListener("click", () => {
-  return colorGradient;
-});
+const randomGradient = gradients[randomIndexGradient];
+const startColor = randomGradient.start;
+const endColor = randomGradient.end;
+console.log(randomGradient);
+console.log("start", startColor);
+console.log("end", endColor);
+const gradientCSS = `linear-gradient(90deg, ${startColor}, ${endColor})`;
+header.style.backgroundImage = gradientCSS;
 
-generateBgImg();
+const infoBtn = document.getElementById("info-btn");
+// const infoBtn = querySelector("#info-btn")
+
+const infoBtnClickHandler = () => {
+  console.dir(document);
+  alert("haha, ça marche !!?");
+};
+
+infoBtn.addEventListener("click", infoBtnClickHandler);
