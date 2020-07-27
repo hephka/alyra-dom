@@ -78,15 +78,6 @@ pubEl.addEventListener("click", () => {
 });
 
 // Le bouton 😎 regénere la tagline
-
-const headerBtn = document.querySelector("#header button");
-
-if (headerBtn) {
-  headerBtn.addEventListener("click", () => {
-    alert("=)");
-  });
-}
-
 const headerEl = document.getElementById("header");
 const tagline = document.getElementById("tagline");
 
@@ -106,14 +97,14 @@ const generateHeader = () => {
 generateHeader();
 
 // Et si on voulait désactiver tous les boutons ?
-headerBtn = document.querySelector("#header button");
+const headerBtn = document.querySelector("#header button");
 
 if (headerBtn) {
-  headerBtn.addEventListener("click", () => {});
+  headerBtn.addEventListener("click", generateHeader);
 }
 
 // 9
-
+/*
 const buttons = document.querySelectorAll("button");
 // const buttons = document.getElementsByTagName("button")
 console.log(buttons);
@@ -121,7 +112,7 @@ console.log(buttons);
 for (let button of buttons) {
   button.disabled = true;
 }
-
+*/
 // 10
 
 const pCookies = document.createElement("p");
