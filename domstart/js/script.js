@@ -81,7 +81,7 @@ pubEl.addEventListener("click", () => {
 const headerEl = document.getElementById("header");
 const tagline = document.getElementById("tagline");
 
-const generateHeader = () => {
+function generateHeader() {
   const colors = ["hotpink", "tomato", "orange"];
   const randomIndexColor = Math.floor(Math.random() * colors.length);
   const hi = ["Hello", "Salut", "Hola", "Cześć"];
@@ -92,7 +92,7 @@ const generateHeader = () => {
     `background-color:${colors[randomIndexColor]}!important;`
   );
   tagline.textContent = `${hi[randomIndexHi]} =)`;
-};
+}
 
 generateHeader();
 
